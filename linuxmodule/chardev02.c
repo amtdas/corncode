@@ -24,21 +24,16 @@ static int __init chardev_static_init(void)
 	pr_info("Device Name : %s\n", devicename);
 	pr_info("Count : %d\n", count);
 	
-	bool value = register_chrdev_region(devicenumber, count, devicename);
+	//old approach	
+	//bool value = register_chrdev_region(devicenumber, count, devicename);
 
-	if(value)
-	{
-		pr_info("Registration successfull");
-		return 0;
-	}
+	if(!register_chrdev_region(devicenumber, count, devicename))
+		pr_info("Registration successfull\n");
 	else
-	{
 		pr_info("Registration not successfull\n");
-		return -1;
-	}
 
-	//if (!register_chrdev_region)
-
+	
+	return 0;
 }
 
 static void __exit chardev_static_exit(void)
