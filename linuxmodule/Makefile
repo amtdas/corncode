@@ -9,11 +9,14 @@ obj-m += hello-kthread.o
 obj-m += ps_state_module.o
 obj-m += warnon_module.o
 obj-m += bugon_module.o
+obj-m += ps_tasklist.o
 obj-m += chardev01.o
 obj-m += chardev02.o
-obj-m += ps_tasklist.o
 obj-m += chardev03.o
 obj-m += chardev04.o
+obj-m += chardev05.o
+obj-m += chardev06.o
+obj-m += chardev07.o
 
 obj-m += hello-6-startstop.o
 hello-6-startstop-objs := hello-6-start.o hello-6-stop.o
